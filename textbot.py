@@ -19,15 +19,15 @@ api = tweepy.API(auth)
 
 
 # What the bot will tweet
-filename = open('phrases_coined_by_shakespeare.txt','r') 
+filename = open('warandpeace.txt','r') 
 tweet_text = filename.readlines() #this creates a list: one line → one item
-filename.close()
+filename.close() # have to close file
 
 # loop through the tweet_list
-for line in tweet_text[0:5]: # Will only write first 5 lines
+for line in tweet_text[0:10]: # Will only write first 5 lines
     api.update_status(status=line)
     print(line)
-    time.sleep(5) # Pause for 5 seconds
+    time.sleep(3) # Pause for 5 seconds
 
 print("All done!")
 
